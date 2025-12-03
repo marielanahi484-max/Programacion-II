@@ -1,28 +1,28 @@
-package modelo;
-
 public class Libro {
     private String titulo;
-    private String isbn;
+    private String autor;
+    private String codigo;
 
-    public Libro() {}
-
-    public Libro(String titulo, String isbn) {
+    public Libro(String titulo, String autor, String codigo) {
         this.titulo = titulo;
-        this.isbn = isbn;
+        this.autor = autor;
+        this.codigo = codigo;
     }
 
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public String getIsbn() { return isbn; }
-    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public String getAutor() {
+        return autor;
+    }
 
-    public void mostrarInfo() {
-        System.out.println("Libro: " + titulo + " | ISBN: " + isbn);
+    public String getCodigo() {
+        return codigo;
     }
 
     @Override
     public String toString() {
-        return titulo;
+        return codigo + " - " + titulo + " - " + autor;
     }
 }
