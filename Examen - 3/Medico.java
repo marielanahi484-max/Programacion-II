@@ -1,8 +1,10 @@
-public class Medico {
-    public int idMed;
-    public String nombreMed;
-    public String apellidoMed;
-    public int aniosExperiencia;
+import java.io.Serializable;
+
+class Medico implements Serializable {
+    private int idMed;
+    private String nombreMed;
+    private String apellidoMed;
+    private int aniosExperiencia;
 
     public Medico(int idMed, String nombreMed, String apellidoMed, int aniosExperiencia) {
         this.idMed = idMed;
@@ -11,7 +13,28 @@ public class Medico {
         this.aniosExperiencia = aniosExperiencia;
     }
 
-    public String getNombreCompleto() {
-        return nombreMed + " " + apellidoMed;
+    public int getIdMed() { 
+        return idMed; 
+    }
+    
+    public String getNombreMed() { 
+        return nombreMed; 
+    }
+    
+    public String getApellidoMed() { 
+        return apellidoMed; 
+    }
+    
+    public int getAniosExperiencia() { 
+        return aniosExperiencia; 
+    }
+
+    public void setIdMed(int idMed) { 
+        this.idMed = idMed; 
+    }
+    
+    @Override
+    public String toString() {
+        return "ID: " + idMed + ", Nombre: " + nombreMed + " " + apellidoMed + ", Experiencia: " + aniosExperiencia + " años";
     }
 }
