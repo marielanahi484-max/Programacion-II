@@ -1,15 +1,16 @@
-public class Consulta {
-    public int id;
-    public String nombrePaciente;
-    public String apellidoPaciente;
-    public int idMed;
-    public String dia;
-    public String mes;
-    public int anio;
+import java.io.Serializable;
 
-    public Consulta(int id, String nombrePaciente, String apellidoPaciente, int idMed,
-                    String dia, String mes, int anio) {
-        this.id = id;
+public class Consulta implements Serializable {
+    private int ci;
+    private String nombrePaciente;
+    private String apellidoPaciente;
+    private int idMed;
+    private int dia;
+    private String mes;
+    private int anio;
+
+    public Consulta(int ci, String nombrePaciente, String apellidoPaciente, int idMed, int dia, String mes, int anio) {
+        this.ci = ci;
         this.nombrePaciente = nombrePaciente;
         this.apellidoPaciente = apellidoPaciente;
         this.idMed = idMed;
@@ -18,7 +19,39 @@ public class Consulta {
         this.anio = anio;
     }
 
-    public String getPaciente() {
-        return nombrePaciente + " " + apellidoPaciente;
+    public int getCi() { 
+        return ci; 
     }
+    
+    public String getNombrePaciente() {
+        return nombrePaciente; 
+    }
+    
+    public String getApellidoPaciente() { 
+        return apellidoPaciente; 
+    }
+    
+    public int getIdMed() { 
+        return idMed; 
+    }
+    
+    public int getDia() { 
+        return dia; 
+    }
+    
+    public String getMes() { 
+        return mes; 
+    }
+    
+    public int getAnio() { 
+        return anio; 
+    }
+
+    public void setDia(int dia) { this.dia = dia; }
+
+    @Override
+    public String toString() {
+        return "Consulta{" + "ci=" + ci + ", nombrePaciente=" + nombrePaciente + ", apellidoPaciente=" + apellidoPaciente + ", idMed=" + idMed + ", dia=" + dia + ", mes=" + mes + ", anio=" + anio + '}';
+    }
+
 }
